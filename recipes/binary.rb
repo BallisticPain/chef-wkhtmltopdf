@@ -3,7 +3,7 @@ download_dest = File.join(cache_dir, node['wkhtmltopdf-update']['archive'])
 
 remote_file download_dest do
   source node['wkhtmltopdf-update']['mirror_url']
-  checksum node['wkhtmltopdf-update']['checksum'] if ['wkhtmltopdf-update']['checksum']
+  checksum node['wkhtmltopdf-update']['archive_checksum'] if node['wkhtmltopdf-update']['archive_checksum']
   mode '0644'
   action :create_if_missing
 end
