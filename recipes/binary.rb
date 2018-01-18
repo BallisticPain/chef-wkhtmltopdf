@@ -3,7 +3,7 @@ download_dest = File.join(cache_dir, node['wkhtmltopdf-update']['archive'])
 
 remote_file download_dest do
   source node['wkhtmltopdf-update']['mirror_url']
-  checksum node['wkhtmltopdf-update']['archive_checksum'] if ['wkhtmltopdf-update']['archive_checksum']
+  checksum node['wkhtmltopdf-update']['archive_checksum'] if ['wkhtmltopdf-update']['archive_checksum'].length
   mode '0644'
   action :create_if_missing
 end
@@ -11,7 +11,7 @@ end
 package 'wkhtmltopdf' do
   source download_dest
   not_if "/usr/local/bin/wkhtmltopdf --version | grep #{node['wkhtmltopdf-update']['version']}"
-  not_if { node['wkhtmltopdf-update']['archive'].end_with?('tar.xz') }
+  not_if { source.end_with?('tar.xz') }
 
   # if source.end_with?('.deb')
   #   provider Chef::Provider::Package::Dpkg

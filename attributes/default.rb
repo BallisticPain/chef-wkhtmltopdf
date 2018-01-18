@@ -37,5 +37,5 @@ else
 end
 
 default['wkhtmltopdf-update']['archive'] = "wkhtmltox-#{node['wkhtmltopdf-update']['version']}_#{node['wkhtmltopdf-update']['platform']}"
-default['wkhtmltopdf-update']['archive_checksum'] = nil
+default['wkhtmltopdf-update']['archive_checksum'] = ''
 default['wkhtmltopdf-update']['mirror_url'] = "https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/#{node['wkhtmltopdf-update']['version']}/#{node['wkhtmltopdf-update']['archive']}"
