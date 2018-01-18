@@ -76,6 +76,7 @@ Please use standard Github issues/pull requests and if possible, in combination 
 
 * Brian Flad (<bflad417@gmail.com>) [Deprecated ... He's no longer maintaining or merging pull requests. Decided to fork and start fresh.]
 * Jarvis Stubblefield (jarvis@vortexrevolutions.com) Twitter: @BallisticPain
+* Khaled Blah (kblah@avarteq.de) Twitter: @khaledavarteq
 
 ## License
 
