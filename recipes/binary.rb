@@ -22,6 +22,7 @@ end
 
 tar_extract download_dest do
   action :extract_local
+  compress_char 'J'
   target_dir Chef::Config[:file_cache_path]
   creates "#{Chef::Config[:file_cache_path]}/wkhtmltox"
   only_if { download_dest.end_with?('tar.xz') }
