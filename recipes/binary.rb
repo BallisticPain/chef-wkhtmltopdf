@@ -31,4 +31,5 @@ end
 execute 'Copy wkhtmltox files' do
   command "cp -r #{Chef::Config[:file_cache_path]}/wkhtmltox/. #{node['wkhtmltopdf-update']['root_dir']}"
   only_if { ::File.exists?("#{Chef::Config[:file_cache_path]}/wkhtmltox") }
+  not_if "/usr/local/bin/wkhtmltopdf --version | grep #{node['wkhtmltopdf-update']['version']}"
 end
